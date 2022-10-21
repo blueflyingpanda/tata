@@ -13,11 +13,16 @@ if (localStorage.getItem("currentTs")) {
     localStorage.setItem("currentTs", currentTs);
 }
 
+button = document.getElementsByClassName("wrap__input")[0];
+
 let timesUp = false;
 if (localStorage.getItem("timesUp")) {
     timesUp = localStorage.getItem("timesUp") === "true";
 } else {
     localStorage.setItem("timesUp", timesUp);
+}
+if (timesUp) {
+    button.placeholder = "время вышло";
 }
 
 let attemptsLeft = 10;
@@ -34,6 +39,8 @@ answer = document.getElementById("password");
 phase1 = document.getElementsByClassName("wrap")[0];
 phase2 = document.getElementById("phase2");
 
+
+
 attempts.innerText = "попыток осталось: " + String(attemptsLeft);
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -42,6 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	setInterval(() => {
         if (timesUp) {
             timer.innerText = "00:00:00";
+            button.placeholder = 'время вышло';
+            clearInterval(1);
             return;
         }
         if (!attemptsLeft) {
@@ -71,8 +80,15 @@ function submit(event) {
 	if (event.keyCode !== ENTER_CODE) {
 		return;
 	}
+    processAnswer()
+}
+
+function processAnswer() {
+    if (!answer.value || timesUp) {
+        return;
+    }
     const rightAnswerHash = "ef1291efca01c055aef1904c5abad79b5a91c5b142be022c1442fee289f86250";
-    if (!timesUp && rightAnswerHash == String(CryptoJS.SHA256(answer.value))){
+    if (rightAnswerHash == String(CryptoJS.SHA256(answer.value.trim().toLowerCase()))){
         console.log("Well done!");
         localStorage.clear()
         clearInterval(1);

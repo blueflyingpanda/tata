@@ -10,11 +10,11 @@ html,
 body {
 	width: 100%;
 	height: 100%;
+    background-color: #ffd54f;
 }
 
 body {
 	margin: 0;
-	background-color: black;
 }
 
 .wrap {
@@ -109,7 +109,7 @@ body {
 
 .wrap__timer {
 	position: absolute;
-	top: 30%;
+	top: 20%;
 	left: 50%;
 	transform: translate(-50%);
 	font: 700 clamp(6rem, 18vw + 1rem, 36rem) / 0 "Roboto Mono", monospace;
@@ -120,7 +120,7 @@ body {
 
 .wrap__anouncement {
 	position: absolute;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	transform: translate(-50%);
 	font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
@@ -131,14 +131,29 @@ body {
 
 .wrap__input {
 	position: absolute;
-	top: 70%;
+	top: 60%;
 	left: 50%;
-    width: 50%;
+    width: 40%;
 	transform: translate(-50%);
 	font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
 	color: #333;
 	text-shadow: 0 0 0.125rem black, -0.125rem -0.125rem 0 cyan,
 		0.125rem 0.125rem 0 red;
+}
+
+.wrap__button {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+	transform: translate(-50%);
+	font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
+	color: #333;
+	text-shadow: 0 0 0.125rem black, -0.125rem -0.125rem 0 cyan,
+		0.125rem 0.125rem 0 red;
+}
+
+.wrap__button::hover {
+	color: cyan;
 }
 
 .wrap__attempts {
@@ -219,9 +234,6 @@ body {
 } */
 
 #phase2 {
-    width: 100%;
-	height: 100%;
-	position: relative;
     font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
     color: #333;
     background-color: #ffd54f;
@@ -229,9 +241,11 @@ body {
 }
 
 #phase2 h1 {
-    position: absolute;
-	top: 40%;
-	left: 50%;
-	transform: translate(-50%);
     text-align: center;
+}
+
+#phase2 p {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    text-align: left;
 }
