@@ -1,0 +1,237 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background-color: black;
+}
+
+.wrap {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	border-radius: 4rem;
+}
+.wrap::before {
+	content: " ";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%),
+		linear-gradient(
+			90deg,
+			rgba(255, 0, 0, 0.06),
+			rgba(0, 255, 0, 0.02),
+			rgba(0, 0, 255, 0.06)
+		);
+	z-index: 2;
+	background-size: 100% 2px, 3px 100%;
+	pointer-events: none;
+	animation: flicker 0.15s infinite;
+}
+
+.wrap__layer--1 {
+	height: 75%;
+	background-image: linear-gradient(
+		to right,
+		white 0%,
+		white 14.2857%,
+		yellow 14.285%,
+		yellow 28.5714%,
+		cyan 28.5714%,
+		cyan 42.8571%,
+		green 42.8571%,
+		green 57.1429%,
+		magenta 57.1429%,
+		magenta 71.4286%,
+		red 71.4286%,
+		red 85.7143%,
+		blue 85.7143%,
+		blue 100%
+	);
+}
+.wrap__layer--2 {
+	height: 10%;
+	background-image: linear-gradient(
+		to right,
+		blue 0%,
+		blue 14.2857%,
+		black 14.285%,
+		black 28.5714%,
+		magenta 28.5714%,
+		magenta 42.8571%,
+		black 42.8571%,
+		black 57.1429%,
+		cyan 57.1429%,
+		cyan 71.4286%,
+		black 71.4286%,
+		black 85.7143%,
+		white 85.7143%,
+		white 100%
+	);
+}
+.wrap__layer--3 {
+	height: 15%;
+	background-image: linear-gradient(
+		to right,
+		darkblue 0%,
+		darkblue 16.6667%,
+		white 16.6667%,
+		white 33.3333%,
+		darkviolet 33.3333%,
+		darkviolet 50%,
+		#111 50%,
+		#111 66.6667%,
+		black 66.6667%,
+		black 72.2226%,
+		#111 72.2226%,
+		#111 77.7782%,
+		#222 77.7782%,
+		#222 83.3333%,
+		#111 83.3333%,
+		#111 100%
+	);
+}
+
+.wrap__timer {
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%);
+	font: 700 clamp(6rem, 18vw + 1rem, 36rem) / 0 "Roboto Mono", monospace;
+	color: white;
+	text-shadow: 0 0 0.125rem black, -0.125rem -0.125rem 0 cyan,
+		0.125rem 0.125rem 0 red;
+}
+
+.wrap__anouncement {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
+	color: white;
+	text-shadow: 0 0 0.125rem black, -0.125rem -0.125rem 0 cyan,
+		0.125rem 0.125rem 0 red;
+}
+
+.wrap__input {
+	position: absolute;
+	top: 70%;
+	left: 50%;
+    width: 50%;
+	transform: translate(-50%);
+	font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
+	color: #333;
+	text-shadow: 0 0 0.125rem black, -0.125rem -0.125rem 0 cyan,
+		0.125rem 0.125rem 0 red;
+}
+
+.wrap__attempts {
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%);
+	font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
+	color: white;
+	text-shadow: 0 0 0.125rem black, -0.125rem -0.125rem 0 cyan,
+		0.125rem 0.125rem 0 red;
+}
+
+/* @keyframes flicker {
+	0% {
+		opacity: 0.27861;
+	}
+	5% {
+		opacity: 0.34769;
+	}
+	10% {
+		opacity: 0.23604;
+	}
+	15% {
+		opacity: 0.90626;
+	}
+	20% {
+		opacity: 0.18128;
+	}
+	25% {
+		opacity: 0.83891;
+	}
+	30% {
+		opacity: 0.65583;
+	}
+	35% {
+		opacity: 0.67807;
+	}
+	40% {
+		opacity: 0.26559;
+	}
+	45% {
+		opacity: 0.84693;
+	}
+	50% {
+		opacity: 0.96019;
+	}
+	55% {
+		opacity: 0.08594;
+	}
+	60% {
+		opacity: 0.20313;
+	}
+	65% {
+		opacity: 0.71988;
+	}
+	70% {
+		opacity: 0.53455;
+	}
+	75% {
+		opacity: 0.37288;
+	}
+	80% {
+		opacity: 0.71428;
+	}
+	85% {
+		opacity: 0.70419;
+	}
+	90% {
+		opacity: 0.7003;
+	}
+	95% {
+		opacity: 0.36108;
+	}
+	100% {
+		opacity: 0.24387;
+	}
+} */
+
+#phase2 {
+    width: 100%;
+	height: 100%;
+	position: relative;
+    font: 700 clamp(1rem, 1.5rem, 2rem) "Roboto Mono", monospace;
+    color: #333;
+    background-color: #ffd54f;
+	display: none;
+}
+
+#phase2 h1 {
+    position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%);
+    text-align: center;
+}

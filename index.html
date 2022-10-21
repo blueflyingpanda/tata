@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>tata</title>
+    <link rel="shortcut icon" href="static/tata.jpg" >
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrap">
+        <h1 class="wrap__anouncement">когда время закончится, пароль больше не подойдёт</h1>
+        <input type="text" class="wrap__input" placeholder="введи пароль" id="password">
+        <time datetime="23:59:59" aria-live="polite" aria-atomic="true" id="timer" class="wrap__timer">
+            23:59:59
+        </time>
+        <h1 class="wrap__attempts" id="attempts">попыток осталось: 10</h1>
+        <div class="wrap__layer--1"></div>
+        <div class="wrap__layer--2"></div>
+        <div class="wrap__layer--3"></div>
+    </div>
+    <div id="phase2">
+        <h1>Ты молодец!</h1>
+    </div>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
